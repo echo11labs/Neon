@@ -1,0 +1,350 @@
+.scroll-hero-container {
+  height: 400vh; /* Shorter track for snappier pacing */
+  position: relative;
+  margin-top: -80px; /* pull up behind navbar */
+  background-color: #000;
+}
+
+.sticky-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-parallax-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  will-change: transform, filter; 
+}
+
+.hero-overlay-gradient {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.2) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.story-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.story-text-wrapper {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.story-text {
+  position: relative;
+  font-size: 4rem;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  will-change: opacity, transform;
+}
+
+.hero-final-content {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto; /* Re-enable clicks since wrapper disables them */
+  will-change: opacity, transform;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--accent-green);
+  border: 1px solid rgba(0,255,115,0.3);
+}
+
+.hero-title {
+  font-size: 5.5rem;
+  line-height: 0.95;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--text-main);
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  line-height: 1.7;
+  max-width: 650px;
+  text-align: center;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Showcase Section */
+.showcase-section {
+  padding: 10rem 0;
+  position: relative;
+  z-index: 4;
+  background-color: var(--bg-dark);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 6rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.view-all-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-main);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.view-all-link:hover {
+  color: var(--accent-green);
+  transform: translateX(5px);
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.showcase-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: block;
+  height: 600px;
+  background: var(--bg-card);
+}
+
+.showcase-card:not(.large) {
+  height: 450px;
+}
+
+.showcase-img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.showcase-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-card:hover .showcase-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.showcase-info {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.showcase-card:hover .showcase-info {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(18, 18, 18, 0.6);
+}
+
+.showcase-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.showcase-info .price {
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+
+/* Narrative Section */
+.narrative-section {
+  padding: 10rem 0;
+  background-color: #08080a;
+  position: relative;
+  z-index: 4;
+}
+
+.narrative-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  align-items: center;
+}
+
+.narrative-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.narrative-content p {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+}
+
+.narrative-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.narrative-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.05rem;
+  color: var(--text-main);
+}
+
+.narrative-list li svg {
+  color: var(--accent-green);
+}
+
+.narrative-image-wrapper {
+  border-radius: 24px;
+  overflow: hidden;
+  height: 700px;
+  position: relative;
+}
+
+.narrative-image {
+  height: 120%; /* Extra height to allow parallax sliding */
+  width: 100%;
+  position: absolute;
+  top: -10%;
+  left: 0;
+  will-change: transform;
+}
+
+.narrative-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 10rem 0;
+  position: relative;
+  z-index: 4;
+  background-color: var(--bg-dark);
+}
+
+.cta-banner-wrapper {
+  position: relative;
+  border-radius: 30px;
+  padding: 10rem 4rem;
+  overflow: hidden;
+  background-color: #111;
+}
+
+.cta-banner-bg {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 140%; /* Space for parallax */
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  will-change: transform;
+}
+
+.cta-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10, 10, 12, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.cta-content h2 {
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+  font-size: 1.15rem;
+  color: #ccc;
+}
+
+.mt-4 { margin-top: 2.5rem; }
+
+@media (max-width: 992px) {
+  .hero-title { font-size: 3.5rem; }
+  .story-text { font-size: 2.5rem; }
+  .showcase-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .showcase-card { height: 400px; }
+  .narrative-container { grid-template-columns: 1fr; gap: 4rem; }
+  .narrative-image-wrapper { height: 400px; }
+  .cta-banner-wrapper { padding: 5rem 2rem; }
+  .cta-content h2 { font-size: 3rem; }
+}
